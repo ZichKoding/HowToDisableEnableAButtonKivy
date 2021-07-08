@@ -9,5 +9,5 @@ It is time to learn how to disable and enable a button in Kivy. This is necessar
 First, we need to import the libraries and add the classes into our .py file, then load the .kv file into our .py file.
 
 **main.py**<br>
-`import kivy`<br>
-`from kivy.app import App`
+`import kivy
+from kivy.app import App
