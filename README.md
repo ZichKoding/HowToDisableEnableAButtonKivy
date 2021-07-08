@@ -36,7 +36,7 @@ Now, we have the function of our app. It is time to start adding the buttons in 
 
 Let's add two buttons called "Button 1" and "Button 2", and disable "Button 2". To do this we will use a boolean statement from Kivy, `disabled: True`.
 
-**__main.kv__**
+**main.kv**
 
     <Shot>
         BoxLayout:
@@ -59,3 +59,61 @@ You now know how to disable a button. However, this does not do you justice unle
 
 We need to add a few more things to our buttons before we move back into the logic in the .py file. Each button needs to have an `id:` method and a `on_press:` method added.
 
+**main.kv**
+
+    BoxLayout:
+        orientation: "horizontal"
+        size: root.width, root.height
+        
+        Button:
+            # BELOW IS THE ID TAG
+            id: but_one
+            text: "Button 1"
+            size_hint: (1,1)
+            disabled: False
+            # BELOW IS THE ON_PRESS TAG
+            on_press: root.disabled_other()
+            
+        Button:
+            # BELOW IS THE ID TAG
+            id: but_two
+            text: "Button 2"
+            size_hint: (1,1)
+            disabled: True
+            # BELOW IS THE ON_PRESS TAG
+            on_press: root.disable_other()
+            
+Finally, we can move back into our .py file! All we need to do is add our `disable_other()` method to our class `Shot()`. Then we add an `if` statement to `disable_other()` for our app to determine when our enabled button is pressed it will disable itself and enable the other button.
+
+It should look something like this:
+
+**main.py**
+
+    import kivy
+    from kivy.app import App
+    from kivy.uix.widget import Widget
+    from kivy.lang import Builder
+    
+    Builder.load_file('main.kv')
+    
+    class Shot(Widget):
+    
+        # Method to diable one button and activate the other
+        def disable_other(self):
+            if self.ids.but_two.disabled == False:
+                self.ids.but_two.disabled = True
+                self.ids.but_one.disabled = False
+                print('Button 1 is now disabled. Button 2 is now enabled.')
+            else:
+                self.ids.but_one.disabled = True
+                self.ids.but_two.disabled = False
+                print('Button 1 is now enabled. Button 2 is now disabled.')
+                
+    class ShotApp(App):
+        def build(self):
+            return Shot()
+            
+    if __name__ == '__main__':
+        ShotApp().run()
+        
+You now have the knowledge to disable and enable your buttons with Kivy on demand! Have fun coding!
