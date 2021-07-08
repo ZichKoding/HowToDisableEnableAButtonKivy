@@ -1,4 +1,3 @@
-# HowToDisable&EnableAButtoninKivy-Python
 This is for a shot I am writing for Edpresso|Educative.io called "How to Disable a button in Kivy?".
 
 --------------------------------------------------------------------------------------------------------------------------
@@ -11,5 +10,5 @@ First, we need to import the libraries and add the classes into our .py file, th
 
 **main.py**
 
-`import kivy\
+`import kivy\n
 from kivy.app import App`
