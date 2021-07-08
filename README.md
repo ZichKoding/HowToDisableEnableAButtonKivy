@@ -10,4 +10,8 @@ First, we need to import the libraries and add the classes into our .py file, th
 
 **main.py**<br>
 `import kivy
-from kivy.app import App`
+from kivy.app import App
+from kivy.uix.widget import Widget
+from kivy.lang import Builder
+
+#load in the .kv file`
