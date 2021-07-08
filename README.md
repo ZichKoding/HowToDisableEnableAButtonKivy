@@ -10,26 +10,26 @@ First, we need to import the libraries and add the classes into our .py file, th
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ***main.py***
-`import kivy`
-`from kivy.app import App`
-`from kivy.uix.widget import Widget`
-`from kivy.lang import Builder`
+import kivy
+from kivy.app import App
+from kivy.uix.widget import Widget
+from kivy.lang import Builder
 
-`# load in the .kv file`
-`Builder.load_file('main.kv')`
+# load in the .kv file
+Builder.load_file('main.kv')
 
-`class Shot(Widget):`
-  `pass`
+class Shot(Widget):
+  pass
 
-`class ShotApp(App):`
-  `def build(self):`
-    `return Shot()`
+class ShotApp(App):
+  def build(self):
+    return Shot()
 
-`if __name__ == '__main__':`
-  `ShotApp().run()`
+if __name__ == '__main__':
+  ShotApp().run()
 
 ***main.kv***
-`<Shot>`
+<Shot>
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
@@ -40,39 +40,39 @@ Let’s add two buttons called “Button 1” and “Button 2”, and disable �
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ***main.py***
-`import kivy`
-`from kivy.app import App`
-`from kivy.uix.widget import Widget`
-`from kivy.lang import Builder`
+import kivy
+from kivy.app import App
+from kivy.uix.widget import Widget
+from kivy.lang import Builder
 
-`# load in the .kv file`
-`Builder.load_file('main.kv')`
+# load in the .kv file
+Builder.load_file('main.kv')
 
-`class Shot(Widget):`
-  `pass`
+class Shot(Widget):
+  pass
 
-`class ShotApp(App):`
-  `def build(self):`
-    `return Shot()`
+class ShotApp(App):
+  def build(self):
+    return Shot()
 
-`if __name__ == '__main__':`
-  `ShotApp().run()`
+if __name__ == '__main__':
+  ShotApp().run()
 
 ***main.kv***
-`<Shot>`
-	`BoxLayout:`
-		`orientation: "horizontal"`
-        `size: root.width, root.height`
+<Shot>
+	BoxLayout:
+		orientation: "horizontal"
+        size: root.width, root.height
 
-        `Button:`
-            `text: "Button 1"`
-            `size_hint: (1,1)`
-            `disabled: False`
+        Button:
+            text: "Button 1"
+            size_hint: (1,1)
+            disabled: False
             
-        `Button:`
-            `text: "Button 2"`
-            `size_hint: (1,1)`
-            `disabled: True`
+        Button:
+            text: "Button 2"
+            size_hint: (1,1)
+            disabled: True
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 Our focus here is main.kv.
 
@@ -86,47 +86,47 @@ We need to add a few more things to our buttons before we move back into the log
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ***main.py***
-`import kivy`
-`from kivy.app import App`
-`from kivy.uix.widget import Widget`
-`from kivy.lang import Builder`
+import kivy
+from kivy.app import App
+from kivy.uix.widget import Widget
+from kivy.lang import Builder
 
-`# load in the .kv file`
-`Builder.load_file('main.kv')`
+# load in the .kv file
+Builder.load_file('main.kv')
 
-`class Shot(Widget):`
-  `pass`
+class Shot(Widget):
+  pass
 
-`class ShotApp(App):`
-  `def build(self):`
-    `return Shot()`
+class ShotApp(App):
+  def build(self):
+    return Shot()
 
-`if __name__ == '__main__':`
-  `ShotApp().run()`
+if __name__ == '__main__':
+  ShotApp().run()
 
 ***main.kv***
-`<Shot>`
-	`BoxLayout:`
-		`orientation: "horizontal"`
-        `size: root.width, root.height`
+<Shot>
+	BoxLayout:
+		orientation: "horizontal"
+        size: root.width, root.height
 
-        `Button:`
-            `# BELOW IS THE ID TAG`
-            `id: but_one`        
-            `text: "Button 1"`
-            `size_hint: (1,1)`
-            `disabled: False`
-            `# BELOW IS THE ON_PRESS TAG`
-            `on_press: root.disable_other()`            
+        Button:
+            # BELOW IS THE ID TAG
+            id: but_one    
+            text: "Button 1"
+            size_hint: (1,1)
+            disabled: False
+            # BELOW IS THE ON_PRESS TAG
+            on_press: root.disable_other()
             
-        `Button:`
-            `# BELOW IS THE ID TAG`
-            `id: but_two`        
-            `text: "Button 2"`
-            `size_hint: (1,1)`
-            `disabled: True`
-            `# BELOW IS THE ON_PRESS TAG`
-            `on_press: root.disable_other()`            
+        Button:
+            # BELOW IS THE ID TAG
+            id: but_two    
+            text: "Button 2"
+            size_hint: (1,1)
+            disabled: True
+            # BELOW IS THE ON_PRESS TAG
+            on_press: root.disable_other()
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 Our focus here is main.kv.
 
@@ -139,56 +139,56 @@ It should look something like this:
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ***main.py***
-`import kivy`
-`from kivy.app import App`
-`from kivy.uix.widget import Widget`
-`from kivy.lang import Builder`
+import kivy
+from kivy.app import App
+from kivy.uix.widget import Widget
+from kivy.lang import Builder
 
-`# load in the .kv file`
-`Builder.load_file('main.kv')`
+# load in the .kv file
+Builder.load_file('main.kv')
 
-`class Shot(Widget):`
-	`# Method to disable one button and activate the other.`
-	`def disable_other(self):`
-		`if self.ids.but_two.disabled == False:`
-			`self.ids.but_two.disabled = True`
-			`self.ids.but_one.disabled = False`
-            `print('Button One is now disabled. Button Two is now enabled.')`
-		`else:`
-			`self.ids.but_one.disabled = True`
-			`self.ids.but_two.disabled = False`
-            `print('Button One is now enabled. Button Two is now disabled.')`
+class Shot(Widget):
+	# Method to disable one button and activate the other.
+	def disable_other(self):
+		if self.ids.but_two.disabled == False:
+			self.ids.but_two.disabled = True
+			self.ids.but_one.disabled = False
+            print('Button One is now disabled. Button Two is now enabled.')
+		else:
+			self.ids.but_one.disabled = True
+			self.ids.but_two.disabled = False
+            print('Button One is now enabled. Button Two is now disabled.')
             
-`class ShotApp(App):`
-  `def build(self):`
-    `return Shot()`
+class ShotApp(App):
+  def build(self):
+    return Shot()
 
-`if __name__ == '__main__':`
-  `ShotApp().run()`
+if __name__ == '__main__':
+  ShotApp().run()
 
 ***main.kv***
-`<Shot>`
-	`BoxLayout:`
-		`orientation: "horizontal"`
-        `size: root.width, root.height`
+<Shot>
+	BoxLayout:
+		orientation: "horizontal"
+        size: root.width, root.height
 
-        `Button:`
-            `# BELOW IS THE ID TAG`
-            `id: but_one`        
-            `text: "Button 1"`
-            `size_hint: (1,1)`
-            `disabled: False`
-            `# BELOW IS THE ON_PRESS TAG`
-            `on_press: root.disable_other()`            
+        Button:
+            # BELOW IS THE ID TAG
+            id: but_one`        
+            text: "Button 1"
+            size_hint: (1,1)
+            disabled: False
+            # BELOW IS THE ON_PRESS TAG
+            on_press: root.disable_other()
             
-        `Button:`
-            `# BELOW IS THE ID TAG`
-            `id: but_two`        
-            `text: "Button 2"`
-            `size_hint: (1,1)`
-            `disabled: True`
-            `# BELOW IS THE ON_PRESS TAG`
-            `on_press: root.disable_other()`            
+        Button:
+            # BELOW IS THE ID TAG
+            id: but_two
+            text: "Button 2"
+            size_hint: (1,1)
+            disabled: True
+            # BELOW IS THE ON_PRESS TAG
+            on_press: root.disable_other()
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 You now have the knowledge to disable and enable your buttons with Kivy on demand! Have fun coding!
