@@ -10,21 +10,21 @@ First, we need to import the libraries and add the classes into our .py file, th
 
 **main.py**<br>
 <p>
-`import kivy`<br>
-`from kivy.app import App`<br>
-`from kivy.uix.widget import Widget`<br>
-`from kivy.lang import Builder`<br>
+import kivy
+from kivy.app import App<br>
+from kivy.uix.widget import Widget<br>
+from kivy.lang import Builder<br>
 
-`# load in the .kv file`<br>
-`Builder.load_file('main.kv')`<br>
+# load in the .kv file<br>
+Builder.load_file('main.kv')<br>
 
-`class Shot(Widget):`<br>
-	`pass`<br>
+class Shot(Widget):<br>
+	pass<br>
 
-`class ShotApp(App):`<br>
-	`def build(self):`<br>
-	`return Shot():`<br>
+class ShotApp(App):<br>
+	def build(self):<br>
+	return Shot():<br>
 
-`if __name__ == '__main__':`<br>
-	`ShotApp().run()`<br>
+if __name__ == '__main__':<br>
+	ShotApp().run()<br>
 </p>
