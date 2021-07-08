@@ -9,7 +9,7 @@ It is time to learn how to disable and enable a button in Kivy. This is necessar
 First, we need to import the libraries and add the classes into our .py file, then load the .kv file into our .py file.
 
 **main.py**<br>
-	`import kivy
+	import kivy
 	from kivy.app import App
 	from kivy.uix.widget import Widget
 	from kivy.lang import Builder
@@ -21,5 +21,5 @@ First, we need to import the libraries and add the classes into our .py file, th
 		def build(self):
 			return Shot()
 	if __name__ == '__main__':
-		ShotApp().run()`
+		ShotApp().run()
 		
