@@ -10,7 +10,7 @@ First, we need to import the libraries and add the classes into our .py file, th
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ***main.py***
-import kivy
+`import kivy
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.lang import Builder
@@ -26,10 +26,10 @@ class ShotApp(App):
     return Shot()
 
 if __name__ == '__main__':
-  ShotApp().run()
+  ShotApp().run()`
 
 ***main.kv***
-<Shot>
+`<Shot>`
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
@@ -40,7 +40,7 @@ Let’s add two buttons called “Button 1” and “Button 2”, and disable �
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ***main.py***
-import kivy
+`import kivy
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.lang import Builder
@@ -56,10 +56,10 @@ class ShotApp(App):
     return Shot()
 
 if __name__ == '__main__':
-  ShotApp().run()
+  ShotApp().run()`
 
 ***main.kv***
-<Shot>
+`<Shot>
 	BoxLayout:
 		orientation: "horizontal"
         size: root.width, root.height
@@ -72,7 +72,7 @@ if __name__ == '__main__':
         Button:
             text: "Button 2"
             size_hint: (1,1)
-            disabled: True
+            disabled: True`
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 Our focus here is main.kv.
 
@@ -86,7 +86,7 @@ We need to add a few more things to our buttons before we move back into the log
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ***main.py***
-import kivy
+`import kivy
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.lang import Builder
@@ -102,10 +102,10 @@ class ShotApp(App):
     return Shot()
 
 if __name__ == '__main__':
-  ShotApp().run()
+  ShotApp().run()`
 
 ***main.kv***
-<Shot>
+`<Shot>
 	BoxLayout:
 		orientation: "horizontal"
         size: root.width, root.height
@@ -126,7 +126,7 @@ if __name__ == '__main__':
             size_hint: (1,1)
             disabled: True
             # BELOW IS THE ON_PRESS TAG
-            on_press: root.disable_other()
+            on_press: root.disable_other()`
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 Our focus here is main.kv.
 
@@ -139,7 +139,7 @@ It should look something like this:
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ***main.py***
-import kivy
+`import kivy
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.lang import Builder
@@ -164,10 +164,10 @@ class ShotApp(App):
     return Shot()
 
 if __name__ == '__main__':
-  ShotApp().run()
+  ShotApp().run()`
 
 ***main.kv***
-<Shot>
+`<Shot>
 	BoxLayout:
 		orientation: "horizontal"
         size: root.width, root.height
@@ -188,7 +188,7 @@ if __name__ == '__main__':
             size_hint: (1,1)
             disabled: True
             # BELOW IS THE ON_PRESS TAG
-            on_press: root.disable_other()
+            on_press: root.disable_other()`
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 You now have the knowledge to disable and enable your buttons with Kivy on demand! Have fun coding!
