@@ -10,6 +10,5 @@ First, we need to import the libraries and add the classes into our .py file, th
 
 **main.py**
 
-`import kivy'
-
+`import kivy`
 `from kivy.app import App`
