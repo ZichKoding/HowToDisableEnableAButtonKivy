@@ -13,5 +13,4 @@ First, we need to import the libraries and add the classes into our .py file, th
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.lang import Builder
-
 #load in the .kv file`
